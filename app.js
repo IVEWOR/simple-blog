@@ -1,12 +1,12 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const app = express();
+const port = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// DB connection
+Connect.CONNECTDB(process.env.URL);
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Server is running at ${port}`);
-});
+// Port Listener
+app.listen(port, () => console.log(`Listening on port: ${port}`));
